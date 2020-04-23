@@ -1,0 +1,26 @@
+{% extends 'base.html' %}{% block title %} Homepage {% endblock %} {% block content %}
+<div class="container mylogin">
+    {% for message in messages %}
+    <div class="alert alert-warning">
+        <a class="close" href="#" data-dismiss="alert">×</a> {{ message }}
+    </div>
+    {% endfor %}
+    <form method="post" novalidate>
+        {% csrf_token %} {{ form.non_field_errors }} {% for hidden_field in form.hidden_fields %} {{ hidden_field.errors }} {{ hidden_field }} {% endfor %}
+        <table border="1">
+            {% for field in form.visible_fields %}
+            <tr>
+                <th>{{ field.label_tag }}</th>
+                <td>
+                    {{ field.errors }}
+                    <p class="input">{{ field }}</p>
+                    <p class="help">{{ field.help_text }}{{ form.validators }}</p>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <button class="btn btn-primary button" type="submit">Login</button>
+        <label>Register <a href="/signup/">Signup</a></label>
+    </form>
+</div>
+{% endblock %}

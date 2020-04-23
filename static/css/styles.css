@@ -1,0 +1,33 @@
+.center {
+    background: #E8E8E8;
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    margin: 50px;
+}
+
+.mylogin {
+    background: #E8E8E8;
+    margin: auto;
+    width: 40%;
+    border: 3px solid green;
+    padding: 10px;
+    margin: 50px;
+}
+
+.verify {
+    margin-top: 10px;
+}
+
+.button {
+    margin-top: 10px;
+}
+
+.help {
+    font-size: 7px;
+}
+
+.input {
+    margin: 5px;
+}
